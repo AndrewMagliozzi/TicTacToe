@@ -1,49 +1,48 @@
-<script>
-// var firstclick = x
-// var nextclick = !firstclick
+var clickNumber = 0;
 
-var XtoO = function(element){
+var XorO = function(element){
 var choice = $(element);
-  if (choice.text() === "X"){ 
-    choice.text("O");
-  }
-    else if (choice.text() === "O"){
-    choice.text(" ");
-    }
-  else
+  
+   if (clickNumber % 2 === 0){ 
+     if (choice.text() === " "){
     choice.text("X");
-   };
-
-
-$("div#UL").click(function () { XtoO("div#UL"); });
-
-$("div#UM").click(function () { XtoO("div#UM"); });
-
-$("div#UR").click(function () { XtoO("div#UR"); });
-
-$("div#CL").click(function () { XtoO("div#CL"); });
-
-$("div#CM").click(function () { XtoO("div#CM"); });
-
-$("div#CR").click(function () { XtoO("div#CR"); });
-
-$("div#BL").click(function () { XtoO("div#BL"); });
-
-$("div#BM").click(function () { XtoO("div#BM"); });
-
-$("div#BR").click(function () { XtoO("div#BR"); });
-
-
-/*
-$("div.XorO").each(XtoO.click);
-
-
-function clicktochange(action){
-  $(element).click(action(element));
-
+    clickNumber = clickNumber + 1;
+  }
+   }
+  else {
+if (choice.text() === " "){
+    choice.text("O");
 }
+    clickNumber = clickNumber + 1;
+  }
+};
 
-clicktochange(XtoO);
 
-*/
-</script>
+$("div#UL").click(function () { XorO("div#UL"); });
+
+$("div#UM").click(function () { XorO("div#UM"); });
+
+$("div#UR").click(function () { XorO("div#UR"); });
+
+$("div#CL").click(function () { XorO("div#CL"); });
+
+$("div#CM").click(function () { XorO("div#CM"); });
+
+$("div#CR").click(function () { XorO("div#CR"); });
+
+$("div#BL").click(function () { XorO("div#BL"); });
+
+$("div#BM").click(function () { XorO("div#BM"); });
+
+$("div#BR").click(function () { XorO("div#BR"); });
+
+
+function NewGame(){
+ clickNumber = 0;
+  
+ $("div.XorO").each(function(i) {
+   $( this ).text(" "); 
+ }
+);}
+
+$("input#reset").click(NewGame);
