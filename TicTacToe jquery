@@ -1,0 +1,49 @@
+<script>
+// var firstclick = x
+// var nextclick = !firstclick
+
+var XtoO = function(element){
+var choice = $(element);
+  if (choice.text() === "X"){ 
+    choice.text("O");
+  }
+    else if (choice.text() === "O"){
+    choice.text(" ");
+    }
+  else
+    choice.text("X");
+   };
+
+
+$("div#UL").click(function () { XtoO("div#UL"); });
+
+$("div#UM").click(function () { XtoO("div#UM"); });
+
+$("div#UR").click(function () { XtoO("div#UR"); });
+
+$("div#CL").click(function () { XtoO("div#CL"); });
+
+$("div#CM").click(function () { XtoO("div#CM"); });
+
+$("div#CR").click(function () { XtoO("div#CR"); });
+
+$("div#BL").click(function () { XtoO("div#BL"); });
+
+$("div#BM").click(function () { XtoO("div#BM"); });
+
+$("div#BR").click(function () { XtoO("div#BR"); });
+
+
+/*
+$("div.XorO").each(XtoO.click);
+
+
+function clicktochange(action){
+  $(element).click(action(element));
+
+}
+
+clicktochange(XtoO);
+
+*/
+</script>
