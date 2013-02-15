@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<meta charset=utf-8 />
+<title>tic tac toe game</title>
+</head>
+
+  
+<body>
+
+  <div class = "game">
+    
+    <div id = "UL" class = "XorO"> </div>
+    <div id = "UM" class = "XorO"> </div>
+    <div id = "UR" class = "XorO"> </div>  
+  </br>
+  
+    <div id = "CL" class = "XorO"> </div>
+    <div id = "CM" class = "XorO"> </div>
+    <div id = "CR" class = "XorO"> </div>  
+  </br>
+  
+    <div id = "BL" class = "XorO"> </div>
+    <div id = "BM" class = "XorO"> </div>
+    <div id = "BR" class = "XorO"> </div>  
+  </div>
+  
+<input type="button" id="reset" value="New Game" />
+
+
+</body>
+</html>
