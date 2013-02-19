@@ -12,7 +12,7 @@ var WhoWins = function(selector){
     return "";
 };
 
-var selectors = ["div.L", "div.M", "div.R", "div.U", "div.C", "div.B", "div.UL, div.CM, div.BR", "div.BL, div.CM, div.UR"];
+var selectors = ["div.L", "div.M", "div.R", "div.U", "div.C", "div.B", "div#UL, div#CM, div#BR", "div#BL, div#CM, div#UR"];
 
 function GameOver(){
     var winner = "";
