@@ -1,4 +1,35 @@
+       
 var clickNumber = 0;
+
+var WhoWins = function(selector){
+   while (clickNumber < 9){
+   if($(selector).text() === "XXX"){
+   return "X is the winner!";
+   }
+   else if($(selector).text() === "OOO"){
+    return "O is the winner!";
+   }
+   }
+   while (clickNumber === 9){
+          if($(selector).text() === "XXX"){
+   return "X is the winner!";
+   }
+   else if($(selector).text() === "OOO"){
+    return "O is the winner!";
+   }
+    else
+    return "The game is a draw.  Please play again.";
+   }
+};
+
+var selectors = ["div.L", "div.M", "div.R", "div.U", "div.C", "div.B", "div.UL, div.CM, div.BR", "div.BL, div.CM, div.UR"];
+
+function GameOver(){
+selectors.forEach(function (selector) {
+    var whoWon = WhoWins(selector);    
+    $("div#winner").text(whoWon);
+});
+}
 
 var XorO = function(element){
 var choice = $(element);
@@ -15,6 +46,7 @@ if (choice.text() === " "){
 }
     clickNumber = clickNumber + 1;
   }
+  GameOver();
 };
 
 
