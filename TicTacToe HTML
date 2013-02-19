@@ -11,20 +11,21 @@
 
   <div class = "game">
     
-    <div id = "UL" class = "XorO"> </div>
-    <div id = "UM" class = "XorO"> </div>
-    <div id = "UR" class = "XorO"> </div>  
+    <div id = "UL" class = "XorO L U"> </div>
+    <div id = "UM" class = "XorO M U"> </div>
+    <div id = "UR" class = "XorO R U"> </div>  
   </br>
   
-    <div id = "CL" class = "XorO"> </div>
-    <div id = "CM" class = "XorO"> </div>
-    <div id = "CR" class = "XorO"> </div>  
+    <div id = "CL" class = "XorO C L"> </div>
+    <div id = "CM" class = "XorO C M"> </div>
+    <div id = "CR" class = "XorO C R"> </div>  
   </br>
   
-    <div id = "BL" class = "XorO"> </div>
-    <div id = "BM" class = "XorO"> </div>
-    <div id = "BR" class = "XorO"> </div>  
-  </div>
+    <div id = "BL" class = "XorO B L"> </div>
+    <div id = "BM" class = "XorO B M"> </div>
+    <div id = "BR" class = "XorO B R"> </div>  
+  
+<div id="winner"></div>
   
 <input type="button" id="reset" value="New Game" />
 
