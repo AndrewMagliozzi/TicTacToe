@@ -2,38 +2,43 @@
 var clickNumber = 0;
 
 var WhoWins = function(selector){
-   while (clickNumber < 9){
    if($(selector).text() === "XXX"){
-   return "X is the winner!";
+   return "X";
    }
    else if($(selector).text() === "OOO"){
-    return "O is the winner!";
-   }
-   }
-   while (clickNumber === 9){
-          if($(selector).text() === "XXX"){
-   return "X is the winner!";
-   }
-   else if($(selector).text() === "OOO"){
-    return "O is the winner!";
+    return "O";
    }
     else
-    return "The game is a draw.  Please play again.";
-   }
+    return "";
 };
 
 var selectors = ["div.L", "div.M", "div.R", "div.U", "div.C", "div.B", "div.UL, div.CM, div.BR", "div.BL, div.CM, div.UR"];
 
 function GameOver(){
-selectors.forEach(function (selector) {
-    var whoWon = WhoWins(selector);    
-    $("div#winner").text(whoWon);
-});
+    var winner = "";
+
+    selectors.forEach(function (selector) {
+        var whoWon = WhoWins(selector);  
+    
+        if (whoWon === 'X'){
+            $("div#winner").text("X is the winner!");
+            winner = whoWon;
+        }    
+        else if (whoWon === "O"){
+            $("div#winner").text("O is the winner!");
+            winner = whoWon;
+        }
+        else if (whoWon === "" && clickNumber < 9){
+            winner = whoWon;
+        }
+    });
+    if (clickNumber === 9 && winner === ""){
+            $("div#winner").text("The game is a draw.  Please play again.");
+}
 }
 
 var XorO = function(element){
 var choice = $(element);
-  
    if (clickNumber % 2 === 0){ 
      if (choice.text() === " "){
     choice.text("X");
@@ -71,10 +76,10 @@ $("div#BR").click(function () { XorO("div#BR"); });
 
 function NewGame(){
  clickNumber = 0;
-  
+ $("div#winner").text("");
  $("div.XorO").each(function(i) {
    $( this ).text(" "); 
- }
-);}
+ });
+}
 
 $("input#reset").click(NewGame);
